@@ -66,6 +66,8 @@ const autocomplete = (input, datalist, cityCodes) => {
     }
   }, autocompleteTimeout);
 };
+
+
 const search = async () => {
   try {
     const returns = flightTypeSelect.value === "round-trip";
@@ -89,6 +91,7 @@ const search = async () => {
     console.error(error);
   }
 };
+
 const showResults = (results) => {
   if (results.length === 0) {
     searchResults.insertAdjacentHTML(

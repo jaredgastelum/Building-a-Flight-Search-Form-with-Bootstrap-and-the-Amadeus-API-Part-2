@@ -23,26 +23,26 @@ app.get("/api/autocomplete", async (request, response) => {
     response.json([]);
   }
 });
-app.get("/api/search", async (request, response) => {
-  try {
-    const { query } = request;
-    console.log(query);
-    const { data } = await amadeus.shopping.flightOffersSearch.get({
-      originLocationCode: query.origin,
-      destinationLocationCode: query.destination,
-      departureDate: query.departureDate,
-      adults: query.adults,
-      children: query.children,
-      infants: query.infants,
-      travelClass: query.travelClass,
-      ...(query.returnDate ? { returnDate: query.returnDate } : {}),
-    });
-    response.json(data);
-  } catch (error) {
-    console.error(error.response);
-    response.json([]);
-  }
-});
+// app.get("/api/search", async (request, response) => {
+//   try {
+//     const { query } = request;
+//     console.log(query);
+//     const { data } = await amadeus.shopping.flightOffersSearch.get({
+//       originLocationCode: query.origin,
+//       destinationLocationCode: query.destination,
+//       departureDate: query.departureDate,
+//       adults: query.adults,
+//       children: query.children,
+//       infants: query.infants,
+//       travelClass: query.travelClass,
+//       ...(query.returnDate ? { returnDate: query.returnDate } : {}),
+//     });
+//     response.json(data);
+//   } catch (error) {
+//     console.error(error.response);
+//     response.json([]);
+//   }
+// });
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });

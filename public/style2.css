@@ -1,0 +1,123 @@
+.popup-container {
+    width: 100%;
+    background: #edf6f9;
+    position: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, 50%);
+    font-family: "Raleway", sans-serif;
+    padding: 8px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.3);
+    padding-bottom: 20px;
+    opacity: 0;
+    transition: all 500ms cubic-bezier(0.07, 0.71, 0.03, 1.2);
+    pointer-events: none;
+  }
+  
+  .popup-container.active{
+    transform: translate(0%, 3%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .popup-container .chart-container{
+    width: 100%;
+    padding-left: 25px;
+    padding-top: 20px;
+  }
+  
+  .popup-container .popup-content {
+    position: flex;
+  }
+  
+  .popup-container .close-btn{
+    width: 30px;
+  }
+  
+  .popup-container h3 {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    margin: 16px 0;
+  }
+
+  .popup-container .popup-details{
+    font-weight: 700;
+    line-height: 2;
+    color: black;
+    text-align: center;
+  }
+
+  .popup-container .close-btn{
+    width: 50px;
+    position: absolute;
+    transform: translate(976%, -1460%);
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  /* for the second chart */
+
+  .popup-container2 {
+    width: 100%;
+    background: #edf6f9;
+    position: flex;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    font-family: "Raleway", sans-serif;
+    padding: 8px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px -8px rgba(0, 0, 0, 0.3);
+    padding-bottom: 20px;
+    opacity: 0;
+    transition: all 500ms cubic-bezier(0.07, 0.71, 0.03, 1.2);
+    pointer-events: none;
+  }
+  
+  .popup-container2.active{
+    transform: translate(0%, 3%);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .popup-container2 .chart-container2{
+    width: 100%;
+    padding-left: 25px;
+    padding-top: 20px;
+  }
+  
+  .popup-container2 .popup-content2 {
+    position: flex;
+  }
+  
+  .popup-container2 .close-btn2{
+    width: 30px;
+  }
+  
+  .popup-container2 h3 {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    margin: 16px 0;
+  }
+
+  .popup-container2 .popup-details2{
+    font-weight: 700;
+    line-height: 2;
+    color: black;
+    text-align: center;
+  }
+
+  .popup-container2 .close-btn2{
+    width: 50px;
+    position: absolute;
+    transform: translate(976%, -1460%);
+  }

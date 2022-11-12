@@ -312,25 +312,26 @@
     <script>
       const popupContainer = document.querySelector(".popup-container");
       const statsBtn = document.querySelector(".stats-btn");
-      const Button = document.getElementById("realOne");
+      // const Button = document.getElementById("realOne"); not doing anything
       const sixMonths = document.getElementById("6months");
-      const filterBtn = document.getElementById("6 Months")
+      // const filterBtn = document.getElementById("6 Months");
+      const closeBtn = document.querySelector(".popup-container .close-btn")
 
       statsBtn.addEventListener("click", () => {
         popupContainer.classList.add("active");
       })
 
-      Button.addEventListener("click", () => {
-        popupContainer.classList.add("active");
-      })
+      // Button.addEventListener("click", () => {
+      //   popupContainer.classList.add("active");
+      // }) NOT DOING ANYTHING
 
       closeBtn.addEventListener("click", () => {
         popupContainer.classList.remove("active");
       })
 
-      filterBtn.addEventListener("click", () => {
-        popupContainer.classList.remove("active");
-      })
+      // filterBtn.addEventListener("click", () => {
+      //   popupContainer.classList.remove("active");
+      // })
 
     </script>
 

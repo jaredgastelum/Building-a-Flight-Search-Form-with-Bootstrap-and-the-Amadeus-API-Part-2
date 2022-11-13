@@ -260,8 +260,9 @@
         </div>
 
         <div class="close-btn">
-
-          <button id="6 Months" type="button" class="btn btn-dark" style="width: 100px"><span style="font-size: 11px;">6 Months View</span></button>
+          
+          <button id="6 Months" onclick="myFunction()" type="button" class="btn btn-dark" style="width: 100px"><span style="font-size: 11px;">6 Months View</span></button>
+          <button id="6 Months" onclick="myFunction()" type="button" class="btn btn-dark" style="width: 100px"><span style="font-size: 11px;">6 Months View</span></button>
           <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg> -->
@@ -275,31 +276,31 @@
         </div>
       </div>
       <ul class="list-group mb-4" id="search-results"></ul> -->
+
+      <div class="popup-container2" id="6months">
+        <h3>Ticket Prices: <br> Salt Lake City Airport to Seattle-Tacoma Aiport</h3>
+  
+        <div class="popup-content2">
+          <div class="popup-details2" style="transform: translate(-50%, 800%) rotate(-90deg); position: absolute;">
+          Pricing
+        </div>
+  
+          <div class="chart-container2">
+            <canvas id="myChart2"></canvas>
+          </div>
+          <div class="popup-details2">
+            Weekly
+          </div>
+        </div>
+  
+        <div class="close-btn2">
+  
+          <button id="3 Months" type="button" class="btn btn-dark" style="width: 100px"><span style="font-size: 11px;">3 Months View</span></button>
+        </div>
+      </div>
     </div>
 
     <!-- 6 months chart -->
-
-    <div class="popup-container2" id="6months">
-      <h3>Ticket Prices: <br> Salt Lake City Airport to Seattle-Tacoma Aiport</h3>
-
-      <div class="popup-content2">
-        <div class="popup-details2" style="transform: translate(-50%, 800%) rotate(-90deg); position: absolute;">
-        Pricing
-      </div>
-
-        <div class="chart-container2">
-          <canvas id="myChart2"></canvas>
-        </div>
-        <div class="popup-details2">
-          Weekly
-        </div>
-      </div>
-
-      <div class="close-btn2">
-
-        <button id="3 Months" type="button" class="btn btn-dark" style="width: 100px"><span style="font-size: 11px;">3 Months View</span></button>
-      </div>
-    </div>
   </div>
 
 
@@ -317,6 +318,9 @@
       // const filterBtn = document.getElementById("6 Months");
       const closeBtn = document.querySelector(".popup-container .close-btn")
 
+
+      const popupContainer2 = document.querySelector(".popup-container2")
+
       statsBtn.addEventListener("click", () => {
         popupContainer.classList.add("active");
       })
@@ -327,6 +331,7 @@
 
       closeBtn.addEventListener("click", () => {
         popupContainer.classList.remove("active");
+        popupContainer.classList.add("active")
       })
 
       // filterBtn.addEventListener("click", () => {
@@ -338,6 +343,40 @@
     <script>
       const ctx = document.getElementById('myChart').getContext('2d');
       const myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: ['06/4','06/11','06/18','06/25','07/2','07/9','07/16','07/23','07/30', '08/6', '08/13', '08/20', '08/27', '09/3', '09/10', '09/17', '09/24', '10/1', '10/8', '10/15', '10/22', '10/29', '11/5', '11/12'],
+              datasets: [{
+                  
+                  data: [200, 190, 190, 200, 210, 210, 200, 190, 180, 175, 180, 180, 195, 230, 230, 215, 235, 210, 200, 170, 180, 165, 150, 180],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      '#3456bc',
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              scales: {
+                  y: { 
+                      beginAtZero: false
+                  }
+              }
+          }
+      });
+
+
+      // CHART NUMBER 2
+
+      const ctx2 = document.getElementById('myChart2').getContext('2d');
+      const myChart2 = new Chart(ctx2, {
           type: 'line',
           data: {
               labels: ['08/27', '09/3', '09/10', '09/17', '09/24', '10/1', '10/8', '10/15', '10/22', '10/29', '11/5', '11/12'],
@@ -366,6 +405,19 @@
               }
           }
       });
+
+
+
+
+            function myFunction() {
+        var x = document.getElementById("chartchart");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+        popupContainer2.classList.add("active")
+      }
 
       window.scrollTo(0, 0)
 
